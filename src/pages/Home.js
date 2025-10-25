@@ -2,9 +2,8 @@ import React from 'react';
 
 function Home() {
   return (
-    <>
-    
-      
+    <div>
+      <div style={{marginTop:'70px'}}></div>
 
       {/*  CAROUSEL SECTION */}
       <section>
@@ -22,7 +21,7 @@ function Home() {
                 src={process.env.PUBLIC_URL + '/images/FirstSlide.jpg'}
                 className="d-block w-100"
                 alt="Slide 1"
-                style={{ height: '500px', objectFit: 'cover' }}
+                style={{ height: '600px',objectFit: 'Cover' }}
               />
               <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
                 <h3>Welcome to ShopEase</h3>
@@ -39,7 +38,7 @@ function Home() {
                 src={process.env.PUBLIC_URL + '/images/SecondImage.jpg'}
                 className="d-block w-100"
                 alt="Slide 2"
-                style={{ height: '500px', objectFit: 'cover' }}
+                style={{ height: '630px', objectFit: 'cover' }}
               />
               <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
                 <h3>Latest Trends, Best Prices</h3>
@@ -56,7 +55,7 @@ function Home() {
                 src={process.env.PUBLIC_URL + '/images/thirdslide.jpg'}
                 className="d-block w-100"
                 alt="Slide 3"
-                style={{ height: '500px', objectFit: 'cover' }}
+                style={{ height: '630px', objectFit: 'cover' }}
               />
               <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
                 <h3>Fast Delivery, Great Experience</h3>
@@ -76,16 +75,21 @@ function Home() {
             <span className="carousel-control-next-icon"></span>
           </button>
         </div>
-
-
-
       </section>
-
        <section className="text-center mt-5">
-      
+        <div className="container">
+          <h2>Welcome to ShopEase!</h2>
+          <p className="lead">
+            Discover the best deals on the latest fashion, gadgets, and essentials. 
+            Enjoy a seamless shopping experience with fast delivery and exceptional customer service.
+          </p>
+          <a href="/product" className="btn btn-primary btn-lg">
+            Shop Now
+          </a>
+        </div>
     </section>
 
-    </>
+    </div>
   );
 }
 

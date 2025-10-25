@@ -7,13 +7,18 @@ import Cart from './pages/Cart';
 import About from './pages/About';
 import Footer from './Footer';
 
+
 function App() {
   return (
+
+
+  
     <Router>
       <Navbar />
       
       <Routes>
-        <Route path="/" element={<Home />} />
+        
+        <Route path="/" element={<Home/>} />
         <Route path="/product" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/about" element={<About />} />
@@ -21,6 +26,8 @@ function App() {
       
       <Footer />
     </Router>
+
+
   );
 }
 
