@@ -40,12 +40,14 @@ function Footer() {
             </div>
 
             {/* Column 4 */}
-            <div className="col-md-3 mb-3">
+            <div className="col-md-3 mb-3 social-container">
               <h6 className="fw-bold mb-3">Follow Us</h6>
-              <a href="#" className="text-light me-3"><i className="bi bi-facebook"></i></a>
-              <a href="#" className="text-light me-3"><i className="bi bi-instagram"></i></a>
-              <a href="#" className="text-light me-3"><i className="bi bi-twitter"></i></a>
-              <a href="#" className="text-light"><i className="bi bi-youtube"></i></a>
+              <div className="icons">
+              <a href="#" className="text-light me-3 icon facebook-color"><i className="bi bi-facebook"></i></a>
+              <a href="#" className="text-light me-3 icon insta-color"><i className="bi bi-instagram"></i></a>
+              <a href="#" className="text-light me-3 icon linkedin-color" ><i className="bi bi-linkedin"></i></a>
+              <a href="#" className="text-light icon youtub-color"><i className="bi bi-youtube"></i></a>
+              </div>
             </div>
           </div>
 

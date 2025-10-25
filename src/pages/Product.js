@@ -5,17 +5,24 @@ function Products() {
     { id: 1, name: "Smart Watch", price: 4999, image: "/images/watch.jpeg" },
     { id: 2, name: "Headphones", price: 2999, image: "/images/headphones.jpeg" },
     { id: 3, name: "Sneakers", price: 5999, image: "/images/shoes.jpeg" },
+    {id:4, name:"Hoodie", price:3999, image:"/images/hoodie.jpeg"},
+    {id:5, name:"Jacket", price:1999, image:"/images/jacket.jpeg"},
+    {id:6, name:"Coat", price:2499, image:"/images/coat.jpeg"},
+    { id:7, name:"Sunglasses", price:1499, image:"/images/sunglasses.jpeg"},
+    {id:8, name:"Backpack", price:3499, image:"/images/backpack.jpeg"},
+    {id:9, name:"Smartphone", price:15999, image:"/images/smartphone.jpeg"},
+
   ];
 
   return (
     <div> 
-     <div style={{marginTop:'70px'}}></div>
+     <div style={{marginTop:'110px'}}></div>
     <div className="container mt-4">
-      <h2 className="text-center mb-4">Our Products</h2>
+      <h2 className="text-center mb-4"></h2>
       <div className="row">
         {products.map((product) => (
-          <div className="col-md-4 mb-4" key={product.id}>
-            <div className="card shadow-sm">
+          <div className="col-md-3 mb-5" key={product.id}>
+            <div className="card shadow-sm product-card">
               <img
                 src={product.image}
                 className="card-img-top"
