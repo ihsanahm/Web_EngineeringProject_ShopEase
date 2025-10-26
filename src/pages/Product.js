@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Products() {
+function Product({ addToCart }) {
+  console.log('addToCart function received:', !!addToCart); // Check if function is received
   const products = [
     { id: 1, name: "Smart Watch", price: 4999, image: "/images/watch.jpeg" },
     { id: 2, name: "Headphones", price: 2999, image: "/images/headphones.jpeg" },
@@ -11,6 +12,7 @@ function Products() {
     { id:7, name:"Sunglasses", price:1499, image:"/images/sunglasses.jpeg"},
     {id:8, name:"Backpack", price:3499, image:"/images/backpack.jpeg"},
     {id:9, name:"Smartphone", price:15999, image:"/images/smartphone.jpeg"},
+    {id:10, name:"Laptop", price:55999, image:"/images/laptop.jpeg"},
 
   ];
 
@@ -18,7 +20,7 @@ function Products() {
     <div> 
      <div style={{marginTop:'110px'}}></div>
     <div className="container mt-4">
-      <h2 className="text-center mb-4"></h2>
+      <h2 className="text-center mb-4">Our Products</h2>
       <div className="row">
         {products.map((product) => (
           <div className="col-md-3 mb-5" key={product.id}>
@@ -28,11 +30,26 @@ function Products() {
                 className="card-img-top"
                 alt={product.name}
                 style={{ height: "300px", objectFit: "cover" }}
+                onError={(e) => {
+                  console.error(`Error loading image for ${product.name}`);
+                  e.target.src = "https://via.placeholder.com/300x300?text=Product+Image";
+                }}
               />
               <div className="card-body text-center">
                 <h5>{product.name}</h5>
                 <p className="text-success fw-bold">Rs. {product.price}</p>
-                <button className="btn btn-primary">Add to Cart</button>
+                <button 
+                  className="btn btn-primary" 
+                  onClick={() => {
+                    console.log('Adding product to cart:', product);
+                    if (addToCart) {
+                      addToCart(product);
+                    } else {
+                      console.error('addToCart function is not available');
+                    }
+                  }}>
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
@@ -44,4 +61,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default Product;

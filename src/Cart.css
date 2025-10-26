@@ -1,0 +1,121 @@
+body {
+  background-color: #eaeded;
+  font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+.cart-page {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.cart-left {
+  flex: 0.7;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.cart-heading {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.cart-item {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  align-items: center;
+}
+
+.cart-img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.cart-details {
+  flex: 1;
+}
+
+.cart-name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.cart-stock {
+  color: #007600;
+  font-weight: 500;
+}
+
+.cart-delivery {
+  color: #565959;
+  font-size: 14px;
+}
+
+.cart-actions {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.qty-controls button {
+  border: 1px solid #ccc;
+  background-color: #f0f2f2;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.qty-controls span {
+  padding: 0 10px;
+}
+
+.remove-btn {
+  color: #007185;
+  cursor: pointer;
+}
+
+.cart-price {
+  font-size: 18px;
+  font-weight: bold;
+  width: 100px;
+  text-align: right;
+}
+
+.subtotal {
+  text-align: right;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.subtotal span {
+  font-weight: bold;
+}
+
+.cart-right {
+  flex: 0.3;
+}
+
+.checkout-box {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.checkout-btn {
+  background-color: #ffd814;
+  border: 1px solid #fcd200;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.checkout-btn:hover {
+  background-color: #f7ca00;
+}
