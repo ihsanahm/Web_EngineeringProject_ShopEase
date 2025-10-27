@@ -12,7 +12,6 @@ function Product({ addToCart }) {
     { id:7, name:"Sunglasses", price:1499, image:"/images/sunglasses.jpeg"},
     {id:8, name:"Backpack", price:3499, image:"/images/backpack.jpeg"},
     {id:9, name:"Smartphone", price:15999, image:"/images/smartphone.jpeg"},
-    {id:10, name:"Laptop", price:55999, image:"/images/laptop.jpeg"},
 
   ];
 

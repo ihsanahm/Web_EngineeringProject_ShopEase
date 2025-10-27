@@ -38,7 +38,7 @@ function Cart({ cartItems, setCartItems }) {
                   <button onClick={() => increaseQty(item.id)}>+</button>
                 </div>
                 <span className="remove-btn" onClick={() => removeItem(item.id)}>
-                  Delete
+                 Remove
                 </span>
               </div>
             </div>

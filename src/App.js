@@ -5,7 +5,11 @@ import Home from './pages/Home';
 import Product from './pages/Product';
 import Cart from './pages/Cart';
 import About from './pages/About';
+import Contact from './pages/contact';
+import Returns from './pages/Returns';
 import Footer from './Footer';
+import FAQ from './pages/FAQ';
+import MyOrders from './pages/MyOrders';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -48,6 +52,10 @@ function App() {
         <Route path="/product" element={<Product addToCart={addToCart} />} />
         <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/returns" element={<Returns />} />
+        <Route path="FAQ" element={<FAQ />} />
+        <Route path="/MyOrders" element={<MyOrders />} />
       </Routes>
       
       <Footer />

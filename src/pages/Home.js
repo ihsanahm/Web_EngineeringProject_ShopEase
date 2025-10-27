@@ -26,7 +26,7 @@ function Home() {
               <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
                 <h3>Welcome to ShopEase</h3>
                 <p>Your Happiness, Our Goal</p>
-                <a href="#shop" className="btn btn-primary">
+                <a href="/product" className="btn btn-primary">
                   Start Shopping
                 </a>
               </div>
@@ -60,7 +60,7 @@ function Home() {
               <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
                 <h3>Fast Delivery, Great Experience</h3>
                 <p>Everything You Love, In One Place</p>
-                <a href="#contact" className="btn btn-warning">
+                <a href="/contact" className="btn btn-warning">
                   Contact Us
                 </a>
               </div>

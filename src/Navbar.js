@@ -7,7 +7,7 @@ function Navbar() {
     {/*  NAVBAR */}
       <nav className="navbar navbar-expand-lg bg-light shadow-sm fixed-top">
         <div className="container-fluid">
-          <a className="navbar-brand d-flex align-items-center" href="/">
+          <Link className="navbar-brand d-flex align-items-center" to="/">
             <img
               src={process.env.PUBLIC_URL + '/logo192.png'}
               alt="Brand logo"
@@ -16,7 +16,7 @@ function Navbar() {
               className="me-2"
             />
             <span className="fw-bold text-primary">ShopEase</span>
-          </a>
+          </Link>
 
           <button
             className="navbar-toggler"

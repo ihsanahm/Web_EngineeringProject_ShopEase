@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -21,10 +22,10 @@ function Footer() {
             <div className="col-md-3 mb-3">
               <h6 className="fw-bold mb-3">Quick Links</h6>
               <ul className="list-unstyled">
-                <li><a href="/home" className="text-light text-decoration-none">Home</a></li>
-                <li><a href="/product" className="text-light text-decoration-none">Products</a></li>
-                <li><a href="/cart" className="text-light text-decoration-none">Cart</a></li>
-                <li><a href="/about" className="text-light text-decoration-none">About Us</a></li>
+                <li><Link to="/Home" className="text-light text-decoration-none">Home</Link></li>
+                <li><Link to="/product" className="text-light text-decoration-none">Products</Link></li>
+                <li><Link to="/cart" className="text-light text-decoration-none">Cart</Link></li>
+                <li><Link to="/about" className="text-light text-decoration-none">About Us</Link></li>
               </ul>
             </div>
 
@@ -32,10 +33,11 @@ function Footer() {
             <div className="col-md-3 mb-3">
               <h6 className="fw-bold mb-3">Customer Service</h6>
               <ul className="list-unstyled">
-                <li><a href="/contact" className="text-light text-decoration-none">Contact Us</a></li>
-                <li><a href="/faq" className="text-light text-decoration-none">FAQ</a></li>
-                <li><a href="/returns" className="text-light text-decoration-none">Returns</a></li>
-                <li><a href="/shipping" className="text-light text-decoration-none">Shipping Info</a></li>
+                <li><Link to="/contact" className="text-light text-decoration-none">Contact Us</Link></li>
+                <li><Link to="/FAQ" className="text-light text-decoration-none">FAQ</Link></li>
+                <li><Link to="/returns" className="text-light text-decoration-none">Returns</Link></li>
+                <li><Link to="/shipping" className="text-light text-decoration-none">Shipping Info</Link></li>
+                 <li><Link to="/MyOrders" className="text-light text-decoration-none">My Order </Link></li>
               </ul>
             </div>
 
@@ -43,10 +45,10 @@ function Footer() {
             <div className="col-md-3 mb-3 social-container">
               <h6 className="fw-bold mb-3">Follow Us</h6>
               <div className="icons">
-              <a href="#" className="text-light me-3 icon facebook-color"><i className="bi bi-facebook"></i></a>
-              <a href="#" className="text-light me-3 icon insta-color"><i className="bi bi-instagram"></i></a>
-              <a href="#" className="text-light me-3 icon linkedin-color" ><i className="bi bi-linkedin"></i></a>
-              <a href="#" className="text-light icon youtub-color"><i className="bi bi-youtube"></i></a>
+              <a href="https://facebook.com/shopease" className="text-light me-3 icon facebook-color"><i className="bi bi-facebook"></i></a>
+              <a href="https://instagram.com/shopease" className="text-light me-3 icon insta-color"><i className="bi bi-instagram"></i></a>
+              <a href="https://linkedin.com/company/shopease" className="text-light me-3 icon linkedin-color" ><i className="bi bi-linkedin"></i></a>
+              <a href="https://youtube.com/shopease" className="text-light icon youtub-color"><i className="bi bi-youtube"></i></a>
               </div>
             </div>
           </div>
