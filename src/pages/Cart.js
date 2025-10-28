@@ -28,7 +28,7 @@ function Cart({ cartItems, setCartItems }) {
 
             <div className="cart-details">
               <h3 className="cart-name">{item.name}</h3>
-              <p className="cart-stock">In Stock</p>
+              <p className="cart-stock">In Stock <span>6</span></p>
               <p className="cart-delivery">Eligible for FREE Shipping</p>
 
               <div className="cart-actions">
@@ -37,9 +37,9 @@ function Cart({ cartItems, setCartItems }) {
                   <span>{item.qty}</span>
                   <button onClick={() => increaseQty(item.id)}>+</button>
                 </div>
-                <span className="remove-btn" onClick={() => removeItem(item.id)}>
+                <button className="remove-btn" onClick={() => removeItem(item.id)}>
                  Remove
-                </span>
+                </button>
               </div>
             </div>
 

@@ -22,7 +22,7 @@ function Footer() {
             <div className="col-md-3 mb-3">
               <h6 className="fw-bold mb-3">Quick Links</h6>
               <ul className="list-unstyled">
-                <li><Link to="/Home" className="text-light text-decoration-none">Home</Link></li>
+                <li><Link to="/" className="text-light text-decoration-none">Home</Link></li>
                 <li><Link to="/product" className="text-light text-decoration-none">Products</Link></li>
                 <li><Link to="/cart" className="text-light text-decoration-none">Cart</Link></li>
                 <li><Link to="/about" className="text-light text-decoration-none">About Us</Link></li>
@@ -34,10 +34,10 @@ function Footer() {
               <h6 className="fw-bold mb-3">Customer Service</h6>
               <ul className="list-unstyled">
                 <li><Link to="/contact" className="text-light text-decoration-none">Contact Us</Link></li>
-                <li><Link to="/FAQ" className="text-light text-decoration-none">FAQ</Link></li>
+                <li><Link to="/faq" className="text-light text-decoration-none">FAQ</Link></li>
                 <li><Link to="/returns" className="text-light text-decoration-none">Returns</Link></li>
                 <li><Link to="/shipping" className="text-light text-decoration-none">Shipping Info</Link></li>
-                 <li><Link to="/MyOrders" className="text-light text-decoration-none">My Order </Link></li>
+                 <li><Link to="/orders" className="text-light text-decoration-none">My Orders</Link></li>
               </ul>
             </div>
 
@@ -45,10 +45,10 @@ function Footer() {
             <div className="col-md-3 mb-3 social-container">
               <h6 className="fw-bold mb-3">Follow Us</h6>
               <div className="icons">
-              <a href="https://facebook.com/shopease" className="text-light me-3 icon facebook-color"><i className="bi bi-facebook"></i></a>
-              <a href="https://instagram.com/shopease" className="text-light me-3 icon insta-color"><i className="bi bi-instagram"></i></a>
-              <a href="https://linkedin.com/company/shopease" className="text-light me-3 icon linkedin-color" ><i className="bi bi-linkedin"></i></a>
-              <a href="https://youtube.com/shopease" className="text-light icon youtub-color"><i className="bi bi-youtube"></i></a>
+              <a href="https://www.facebook.com" className="text-light me-3 icon facebook-color"><i className="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/accounts/login/?hl=en" className="text-light me-3 icon insta-color"><i className="bi bi-instagram"></i></a>
+              <a href="https://linkedin.com" className="text-light me-3 icon linkedin-color" ><i className="bi bi-linkedin"></i></a>
+              <a href="https://youtube.com" className="text-light icon youtub-color"><i className="bi bi-youtube"></i></a>
               </div>
             </div>
           </div>

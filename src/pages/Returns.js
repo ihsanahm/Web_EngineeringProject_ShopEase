@@ -4,11 +4,25 @@ import { Link } from 'react-router-dom';
 
 function Returns() {
   return (
-    <div style={{ marginTop: '110px', padding: '20px' }}>
-      <div className="container">
-        <div className="card shadow-lg">
+    <div style={{
+      marginTop: '110px',
+      padding: '20px',
+      
+     
+
+      }}>
+      <div className="container" >
+        <div className="card shadow-lg" 
+        style={
+          {backgroundColor: 'white',
+            border: '2px',
+            borderRadius: '50px',
+
+
+        }
+        }>
           <div className="card-body p-4">
-            <h2 className="mb-3">Returns &amp; Exchanges</h2>
+            <h2 className="mb-3" style={{textAlign:"center",}}>Returns &amp; Exchanges</h2>
 
             <p>
               We want you to be completely satisfied with your purchase from ShopEase. If

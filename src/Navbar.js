@@ -34,16 +34,16 @@ function Navbar() {
             {/* Center Links */}
             <ul className="navbar-nav mx-auto text-center">
               <li className="nav-item">
-                <a className="nav-link active" href="/home">Home</a>
+                <Link className="nav-link" to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/product">Products</a>
+                <Link className="nav-link" to="/product">Products</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/cart">Cart</a>
+                <Link className="nav-link" to="/cart">Cart</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/about">About Us</a>
+                <Link className="nav-link" to="/about">About Us</Link>
               </li>
             </ul>
 

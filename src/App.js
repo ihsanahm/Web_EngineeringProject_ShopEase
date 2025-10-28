@@ -10,9 +10,11 @@ import Returns from './pages/Returns';
 import Footer from './Footer';
 import FAQ from './pages/FAQ';
 import MyOrders from './pages/MyOrders';
+import AppSlider from './app_slider';
 import { useState, useEffect } from 'react';
 
 function App() {
+
   // Load cart from localStorage on initial render; fallback to empty array
   const [cartItems, setCartItems] = useState(() => {
     const savedCart = localStorage.getItem('cartItems');
@@ -43,23 +45,30 @@ function App() {
     }
   };
 
+
+  
   return (
     <Router>
       <Navbar />
       
+      
       <Routes>
-        <Route path="/Home" element={<Home/>} />
+  <Route path="/" element={<AppSlider />} />
+  <Route path="/Home" element={<Home/>} />
         <Route path="/product" element={<Product addToCart={addToCart} />} />
         <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/returns" element={<Returns />} />
-        <Route path="FAQ" element={<FAQ />} />
-        <Route path="/MyOrders" element={<MyOrders />} />
+  <Route path="/faq" element={<FAQ />} />
+  <Route path="/orders" element={<MyOrders />} />
       </Routes>
       
       <Footer />
     </Router>
+
+   
+
   );
 }
 
