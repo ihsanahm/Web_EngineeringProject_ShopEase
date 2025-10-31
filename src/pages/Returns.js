@@ -14,9 +14,12 @@ function Returns() {
       <div className="container" >
         <div className="card shadow-lg" 
         style={
-          {backgroundColor: 'white',
+          {
+            backgroundColor: 'white',
             border: '2px',
             borderRadius: '50px',
+            
+            
 
 
         }

@@ -10,7 +10,7 @@ import Returns from './pages/Returns';
 import Footer from './Footer';
 import FAQ from './pages/FAQ';
 import MyOrders from './pages/MyOrders';
-import AppSlider from './app_slider';
+
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -53,8 +53,10 @@ function App() {
       
       
       <Routes>
-  <Route path="/" element={<AppSlider />} />
-  <Route path="/Home" element={<Home/>} />
+       
+        {/* Render Home at the root path so the navbar Home link (to="/") shows Home */}
+        <Route path="/" element={<Home />} />
+        {/* Keep the slider available at its own path */}
         <Route path="/product" element={<Product addToCart={addToCart} />} />
         <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="/about" element={<About />} />
