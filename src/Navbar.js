@@ -36,8 +36,19 @@ function Navbar() {
               <li className="nav-item">
                 <Link className="nav-link" to="/">Home</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/product">Products</Link>
+              <li className="nav-item dropdown">
+                <Link className="nav-link dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false" to="/">
+                   Product
+                  </Link>
+                   <ul className="dropdown-menu">
+                      <li><Link className="dropdown-item" href="#">categry 1</Link></li>
+                      <li><Link className="dropdown-item" href="#">categry 2</Link></li>
+                
+                     <li><Link className="dropdown-item" href="#">categry 3</Link></li>
+                     <li><Link className="dropdown-item" href="#">categry 4</Link></li>
+                     <li><Link className="dropdown-item" href="#">categry 5</Link></li>
+                     <li><Link className="dropdown-item" href="#">categry 6</Link></li>
+                   </ul>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/cart">Cart</Link>

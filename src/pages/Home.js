@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 function Home() {
   return (
     <div>
@@ -23,9 +24,9 @@ function Home() {
               <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
                 <h3>Welcome to ShopEase</h3>
                 <p>Your Happiness, Our Goal</p>
-                <a href="/product" className="btn btn-primary">
+                <Link to="/product" className="btn btn-primary">
                   Start Shopping
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -81,9 +82,9 @@ function Home() {
             Discover the best deals on the latest fashion, gadgets, and essentials. 
             Enjoy a seamless shopping experience with fast delivery and exceptional customer service.
           </p>
-          <a href="/product" className="btn btn-primary btn-lg">
+          <Link to="/product" className="btn btn-primary btn-lg">
             Shop Now
-          </a>
+          </Link>
         </div>
     </section>
 

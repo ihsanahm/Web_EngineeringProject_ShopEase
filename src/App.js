@@ -55,15 +55,15 @@ function App() {
       <Routes>
        
         {/* Render Home at the root path so the navbar Home link (to="/") shows Home */}
+        
         <Route path="/" element={<Home />} />
-        {/* Keep the slider available at its own path */}
         <Route path="/product" element={<Product addToCart={addToCart} />} />
         <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/returns" element={<Returns />} />
-  <Route path="/faq" element={<FAQ />} />
-  <Route path="/orders" element={<MyOrders />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/orders" element={<MyOrders />} />
       </Routes>
       
       <Footer />
