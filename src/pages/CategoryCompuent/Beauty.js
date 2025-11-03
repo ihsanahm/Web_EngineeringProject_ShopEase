@@ -1,44 +1,34 @@
 import React, { useState } from "react";
 
-function Product({ addToCart }) {
+function Beauty({ addToCart }) {
   const [hoveredRating, setHoveredRating] = useState(null);
-
-  // Helper to calculate discounted price (returns integer rupees)
-  const calculateDiscountedPrice = (price, discountPercent) => {
-    const p = Number(price) || 0;
-    const d = Number(discountPercent) || 0;
-    return Math.round(p * (1 - d / 100));
-  };
 
   const products = [
     {
       id: 1,
-      name: "Smart Watch",
-      desc: "Bluetooth Smart Watch with Fitness Tracker",
+      name: "Lipstick",
+      desc: "Matte Long-lasting Lipstick",
       price: 4999,
-      discount:30,
       rating: 4.5,
       reviews: 1200,
       ratingsBreakdown: { 5: 70, 4: 20, 3: 6, 2: 2, 1: 2 },
-      image: "/images/watch.jpeg",
+      image: "/images/lipstick.jpeg",
     },
     {
       id: 2,
-      name: "Headphones",
-      desc: "Wireless Over-Ear Noise Cancelling Headphones",
+      name: "Makeup kit",
+      desc: "Complete Makeup Kit for All Occasions",
       price: 2999,
-      discount:10,
       rating: 4.3,
       reviews: 890,
       ratingsBreakdown: { 5: 60, 4: 25, 3: 8, 2: 4, 1: 3 },
-      image: "/images/headphones.jpeg",
+      image: "/images/makeup.jpeg",
     },
     {
       id: 3,
       name: "Sneakers",
       desc: "Comfortable Running Shoes for Men",
       price: 5999,
-      discount:15,
       rating: 4.7,
       reviews: 650,
       ratingsBreakdown: { 5: 75, 4: 18, 3: 4, 2: 2, 1: 1 },
@@ -49,7 +39,6 @@ function Product({ addToCart }) {
       name: "Smartphone",
       desc: "Latest Model with Advanced Features",
       price: 24999,
-      discount:30,
       rating: 4.6,
       reviews: 1500,
       ratingsBreakdown: { 5: 68, 4: 22, 3: 6, 2: 2, 1: 2 },
@@ -60,7 +49,6 @@ function Product({ addToCart }) {
       name: "backpack",
       desc: "Durable and Spacious Travel Backpack",
       price: 3999,
-      discount:10,
       rating: 4.4,
       reviews: 720,
       ratingsBreakdown: { 5: 65, 4: 24, 3: 7, 2: 3, 1: 1 },
@@ -72,7 +60,6 @@ function Product({ addToCart }) {
       name:"Jacket",
       desc:"Waterproof Winter Jacket",
       price:7999,
-      discount:30,
       rating:4.2,
       ratingsBreakdown: { 5: 65, 4: 24, 3: 7, 2: 3, 1: 1 },
       reviews: 540,
@@ -86,8 +73,7 @@ function Product({ addToCart }) {
       id:7,
       name:"Hoodie",
       desc:"Comfortable Cotton Hoodie",
-      price:3000,
-      discount:25,
+      price:"3000",
       rating:4.3,
       ratingsBreakdown:{ 5: 60, 4: 25, 3: 8, 2: 4, 1: 3 },
       reviews: 430,
@@ -98,7 +84,6 @@ function Product({ addToCart }) {
       name:"coat",
       desc:"Stylish Winter Coat",
       price:8999,
-      discount:10,
       rating:4.5,
       ratingsBreakdown:{ 5: 70, 4: 20, 3: 6, 2: 2, 1: 2 },
       reviews:610,
@@ -137,7 +122,6 @@ function Product({ addToCart }) {
               <div className="card-body" style={{ fontSize: "14px" }}>
                 <p className="fw-semibold mb-1">{p.name}</p>
                 <p className="text-muted" style={{ fontSize: "13px" }}>
-                  <p className="text-muted" style={{fontSize: "14px",fontStyle:"bold",color:"green"}}>{p.discount}% OFF</p>
                   {p.desc}
                 </p>
 
@@ -223,19 +207,7 @@ function Product({ addToCart }) {
                 </div>
 
                 {/* Price and delivery */}
-                {(() => {
-                  const discountedPrice = calculateDiscountedPrice(p.price, p.discount || 0);
-                  return (
-                    <>
-                      <h5 className="text-dark mb-0">
-                        <span className="text-muted text-decoration-line-through">Rs. {Number(p.price).toLocaleString()}</span>
-                        {' '}
-                        <span className="fw-bold">Rs. {discountedPrice.toLocaleString()}</span>
-                      </h5>
-                      <small className="text-danger d-block mb-2">{p.discount}% OFF</small>
-                    </>
-                  );
-                })()}
+                <h5 className="text-dark mb-0">Rs. {p.price}</h5>
                 <small className="text-success d-block mb-2">
                   Free Delivery Tomorrow
                 </small>
@@ -243,7 +215,7 @@ function Product({ addToCart }) {
                 <button
                   className="btn btn-primary w-100"
                   style={{ fontWeight: "600" }}
-                  onClick={() => addToCart && addToCart({ ...p, price: calculateDiscountedPrice(p.price, p.discount || 0) })}
+                  onClick={() => addToCart && addToCart(p)}
                 >
                   Add to Cart
                 </button>
@@ -256,4 +228,4 @@ function Product({ addToCart }) {
   );
 }
 
-export default Product;
+export default Beauty;

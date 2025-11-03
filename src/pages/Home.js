@@ -1,6 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-function Home() {
+
+// Temporary local data for the 50% OFF deals section.
+// Replace with real product data or import from a central products file as needed.
+const fiftyPercentProducts = [
+  { id: 201, name: 'Rich Dad Poor Dad', price: 3000, discount: 50, image: process.env.PUBLIC_URL + '/images/richdadpoordad.png' },
+  { id: 202, name: 'To Kill a Mockingbird', price: 2999, discount: 50, image: process.env.PUBLIC_URL + '/images/Mockingbird.jpeg' },
+  { id: 203, name: 'The Great Gatsby', price: 1999, discount: 50, image: process.env.PUBLIC_URL + '/images/TheGreatGatsby.jpeg' },
+  { id: 204, name: 'Hoodies', price: 2499, discount: 50, image: process.env.PUBLIC_URL + '/images/hoodie.jpeg' },
+];
+// Helper to calculate discounted price (returns integer rupees)
+const calculateDiscountedPrice = (price, discountPercent) => {
+  const p = Number(price) || 0;
+  const d = Number(discountPercent) || 0;
+  // Round to nearest rupee after applying discount
+  return Math.round(p * (1 - d / 100));
+};
+function Home({ addToCart }) {
   return (
     <div>
       <div style={{marginTop:'70px'}}></div>
@@ -86,6 +102,61 @@ function Home() {
             Shop Now
           </Link>
         </div>
+    </section>
+    <section>
+         <div className="container mt-4">
+      <h2>🔥 50% OFF Deals</h2>
+
+      <div className="row">
+        {fiftyPercentProducts.map(product => (
+          <div key={product.id} className="col-md-3 mb-4">
+            <div 
+              className="card shadow-sm border-0 position-relative"
+              style={{
+                cursor: "pointer",
+                transition: "transform 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.03)")}
+              onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+            >
+              <img 
+                src={product.image} 
+                className="card-img-top" 
+                alt={product.name}
+                style={{ height: "220px", objectFit: "contain", padding: "10px" }}
+                onError={(e) => (e.target.src = "https://via.placeholder.com/300x300?text=Product+Image")}
+              />
+
+              <div className="card-body" style={{ fontSize: "14px" }}>
+                <p className="fw-semibold mb-1">{product.name}</p>
+                {(() => {
+                  const discountedPrice = calculateDiscountedPrice(product.price, product.discount);
+                  return (
+                    <>
+                      <p className="mb-1" style={{ fontSize: "13px" }}>
+                        <span className="text-muted text-decoration-line-through">Rs. {product.price.toLocaleString()}</span>
+                        {' '}
+                        <span className="fw-bold text-dark">Rs. {discountedPrice.toLocaleString()}</span>
+                      </p>
+                      <p className="text-danger fw-bold mb-2" style={{ fontSize: "13px" }}>
+                        {product.discount}% OFF
+                      </p>
+                      <button
+                        className="btn btn-success w-100"
+                        style={{ fontSize: "14px", fontWeight: "600" }}
+                        onClick={() => product && addToCart({ ...product, price: discountedPrice })}
+                      >
+                        Add to Cart
+                      </button>
+                    </>
+                  );
+                })()}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
     </section>
 
     </div>

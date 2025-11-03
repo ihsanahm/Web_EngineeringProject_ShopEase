@@ -41,13 +41,15 @@ function Navbar() {
                    Product
                   </Link>
                    <ul className="dropdown-menu">
-                      <li><Link className="dropdown-item" href="#">categry 1</Link></li>
-                      <li><Link className="dropdown-item" href="#">categry 2</Link></li>
-                
-                     <li><Link className="dropdown-item" href="#">categry 3</Link></li>
-                     <li><Link className="dropdown-item" href="#">categry 4</Link></li>
-                     <li><Link className="dropdown-item" href="#">categry 5</Link></li>
-                     <li><Link className="dropdown-item" href="#">categry 6</Link></li>
+                      <li><Link className="dropdown-item" to="/books">Books</Link></li>
+                      <li><Link className="dropdown-item" to="/beauty">Beauty & Personal Care</Link></li>
+                      <li><Link className="dropdown-item" to="/mobile">Mobile Accessories</Link></li>
+                      <li><Link className="dropdown-item" to="/fashion">Fashion</Link></li>
+                      <li><Link className="dropdown-item" to="/home">Home & Kitchen</Link></li>
+                      <li><Link className="dropdown-item" to="/electronics">Electronics</Link></li>
+                      <li><Link className="dropdown-item" to="/computers">Computers & IT Accessories</Link></li>
+                      <li><Link className="dropdown-item" to="/toys">Toys & Games</Link></li>
+                      <li><Link className="dropdown-item" to="/sports">Sports & Fitness</Link></li>
                    </ul>
               </li>
               <li className="nav-item">
@@ -73,7 +75,7 @@ function Navbar() {
               </form>
               <div className="d-flex gap-2">
                 <button className="btn btn-outline-primary">Sign Up</button>
-                <button className="btn btn-outline-primary">Login</button>
+                <button className="btn btn-outline-primary"> <Link className="nav-link" to="/LoginSignup">Login</Link></button>
               </div>
             </div>
           </div>

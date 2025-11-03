@@ -10,6 +10,9 @@ import Returns from './pages/Returns';
 import Footer from './Footer';
 import FAQ from './pages/FAQ';
 import MyOrders from './pages/MyOrders';
+import Books from './pages/CategoryCompuent/Books';
+import Beauty from './pages/CategoryCompuent/Beauty';
+
 
 import { useState, useEffect } from 'react';
 
@@ -56,14 +59,17 @@ function App() {
        
         {/* Render Home at the root path so the navbar Home link (to="/") shows Home */}
         
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home addToCart={addToCart} />} />
         <Route path="/product" element={<Product addToCart={addToCart} />} />
         <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/returns" element={<Returns />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/books" element={<Books addToCart={addToCart} />} />
+        <Route path="/beauty" element={<Beauty addToCart={addToCart} />} />
         <Route path="/orders" element={<MyOrders />} />
+        
       </Routes>
       
       <Footer />
