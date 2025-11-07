@@ -94,7 +94,10 @@ function Navbar() {
               </form>
               <div className="d-flex gap-2">
                 {currentUser ? (
-                  <button className="btn btn-outline-primary" onClick={handleLogout}>Logout</button>
+                  <>
+                    <span className="nav-link">{currentUser.username}</span>
+                    <button className="btn btn-outline-primary" onClick={handleLogout}>Logout</button>
+                  </>
                 ) : (
                   <button className="btn btn-outline-primary"> <Link className="nav-link" to="/login">Login</Link></button>
                 )}
