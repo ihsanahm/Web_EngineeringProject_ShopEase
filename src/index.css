@@ -119,8 +119,12 @@ img{
   transition: all 0.70s ease; /* smooth transition */
 }
 
+
 /* Correct the inner icon rotation so it’s upright */
 .icon svg {
+  transform: rotate(45deg);
+}
+.icon1 svg {
   transform: rotate(45deg);
 }
 .youtub-color{
@@ -135,6 +139,17 @@ img{
     #285AEB 90%);
 
 }
+.google-color {
+ background: radial-gradient(circle at 30% 107%,
+    #5e8fde 0%,
+    #e93a2a 40%,
+    #e9ba3b 60%,
+    #02a858 110%
+  );
+}
+
+
+
 .facebook-color{
    background-color: #1877F2;
 }
@@ -148,6 +163,7 @@ img{
   transform: rotate(45deg) scale(1.3); /* move toward user */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.975); /* shadow behind */
 }
+
 
 /* Icons change ended here  */
 

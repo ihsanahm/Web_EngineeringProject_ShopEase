@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../Cart.css";
+import { useNavigate } from "react-router-dom";
+
 
 function Cart({ cartItems, setCartItems }) {
 
@@ -16,6 +18,57 @@ function Cart({ cartItems, setCartItems }) {
   };
 
   const total = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const navigate = useNavigate();
+
+
+  const processCheckout = () => {
+    if (!cartItems || cartItems.length === 0) {
+      alert("Your cart is empty");
+      return;
+    }
+
+    const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+    if (!currentUser) {
+      // Save intent and redirect to login
+      localStorage.setItem('pendingCheckout', 'true');
+      navigate('/login');
+      return;
+    }
+
+    const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+    const newOrder = {
+      id: 'order_' + Date.now(),
+      items: cartItems,
+      total,
+      user: currentUser,
+      date: new Date().toISOString(),
+    };
+
+    orders.push(newOrder);
+    localStorage.setItem('orders', JSON.stringify(orders));
+
+    // Clear cart
+    setCartItems([]);
+
+    alert('Order placed successfully');
+  };
+
+  // On mount, if user returned after login to complete checkout, process it
+  useEffect(() => {
+    const pending = localStorage.getItem('pendingCheckout');
+    const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+    if (pending === 'true' && currentUser) {
+      // remove flag then process
+      localStorage.removeItem('pendingCheckout');
+      // allow small delay to ensure cart state is ready
+      setTimeout(() => {
+        if (cartItems && cartItems.length > 0) {
+          processCheckout();
+        }
+      }, 50);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="cart-page">
@@ -57,7 +110,7 @@ function Cart({ cartItems, setCartItems }) {
           <p>
             Subtotal ({cartItems.length} items): <strong>₨ {total}</strong>
           </p>
-          <button className="checkout-btn">Proceed to Checkout</button>
+          <button className="checkout-btn" onClick={processCheckout}>Proceed to Checkout</button>
         </div>
       </div>
     </div>

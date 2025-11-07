@@ -12,6 +12,7 @@ import FAQ from './pages/FAQ';
 import MyOrders from './pages/MyOrders';
 import Books from './pages/CategoryCompuent/Books';
 import Beauty from './pages/CategoryCompuent/Beauty';
+import LoginSignup from './LoginSignup';
 
 
 import { useState, useEffect } from 'react';
@@ -69,6 +70,7 @@ function App() {
         <Route path="/books" element={<Books addToCart={addToCart} />} />
         <Route path="/beauty" element={<Beauty addToCart={addToCart} />} />
         <Route path="/orders" element={<MyOrders />} />
+        <Route path="/login" element={<LoginSignup />} />
         
       </Routes>
       

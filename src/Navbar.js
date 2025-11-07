@@ -1,7 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Navbar() {
+  const [currentUser, setCurrentUser] = useState(() => JSON.parse(localStorage.getItem('currentUser') || 'null'));
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const onStorage = () => setCurrentUser(JSON.parse(localStorage.getItem('currentUser') || 'null'));
+    window.addEventListener('storage', onStorage);
+    // also update on mount
+    onStorage();
+    return () => window.removeEventListener('storage', onStorage);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('currentUser');
+    localStorage.setItem('isLoggedIn', 'false');
+    setCurrentUser(null);
+    try { window.dispatchEvent(new Event('storage')); } catch (e) {}
+    navigate('/');
+  };
+
   return (
     <>
     {/*  NAVBAR */}
@@ -74,8 +93,11 @@ function Navbar() {
                 </button>
               </form>
               <div className="d-flex gap-2">
-                <button className="btn btn-outline-primary">Sign Up</button>
-                <button className="btn btn-outline-primary"> <Link className="nav-link" to="/LoginSignup">Login</Link></button>
+                {currentUser ? (
+                  <button className="btn btn-outline-primary" onClick={handleLogout}>Logout</button>
+                ) : (
+                  <button className="btn btn-outline-primary"> <Link className="nav-link" to="/login">Login</Link></button>
+                )}
               </div>
             </div>
           </div>
